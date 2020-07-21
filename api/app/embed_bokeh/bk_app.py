@@ -2,7 +2,8 @@ from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, Slider
 from bokeh.plotting import figure
 from bokeh.sampledata.sea_surface_temperature import sea_surface_temperature
-# from bokeh.themes import Theme
+from bokeh.themes import Theme
+from pathlib import Path
 
 def add_plot_to_doc(doc):
     df = sea_surface_temperature.copy()
@@ -24,4 +25,7 @@ def add_plot_to_doc(doc):
 
     doc.add_root(column(slider, plot))
 
-    # doc.theme = Theme(filename="theme.yaml") #yaml file is missing
+    # Optional, for formatting the plot
+    path = Path(__file__).parent
+    file_path = (path / "theme.yaml")
+    doc.theme = Theme(filename=file_path)
