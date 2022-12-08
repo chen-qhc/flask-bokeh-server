@@ -1,5 +1,5 @@
 bokeh @ file:///tmp/build/80754af9/bokeh_1593187602660/work
-certifi==2020.6.20
+certifi==2022.12.7
 click==7.1.2
 Flask==1.1.2
 gunicorn==20.0.4
